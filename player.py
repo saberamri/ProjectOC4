@@ -34,7 +34,7 @@ class Player(BaseModel):
 
 player1 = Player(
     id=123, 
-    rank=102, 
+    rank=-102, 
     last_name="Amri", 
     first_name="Saber", 
     birth_date= "1979-04-23", 
