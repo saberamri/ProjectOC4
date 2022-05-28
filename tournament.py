@@ -5,6 +5,18 @@ from pydantic import BaseModel, PositiveInt, constr
 
 from round import Round
 
+class TimeControl(Enum):
+    """
+    TimeControl is a class that inherits from the Eum class.
+
+    Args:
+        Enum (class): Enum is a basic python module integrated into the language 
+        it will enumerate the values of the timecontrol variable.
+    """
+    Bullet = 1
+    blitz = 2
+    fast = 3
+
 
 class Tournament(BaseModel):
     """The Tournament() class inherits from the BaseModel() class
@@ -21,5 +33,5 @@ class Tournament(BaseModel):
     number_of_rounds: PositiveInt = 4
     description: constr(strict=True, max_length=50) = ""
     players: List[PositiveInt]
-    timeconrol: str
+    timeconrol: TimeControl
     rounds: List[Round] = []
