@@ -2,6 +2,8 @@ from datetime import datetime
 from typing import List
 from pydantic import BaseModel, constr
 
+from match import Match
+
 
 class Round(BaseModel):
     """
@@ -13,4 +15,4 @@ class Round(BaseModel):
     name: constr()
     start_date: datetime = datetime.today()
     end_date: datetime = None
-    match = List[Match]
+    matchs = []
