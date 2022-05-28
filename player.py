@@ -1,6 +1,6 @@
-from datetime import date
+from datetime import date, timedelta
 from enum import Enum
-from pydantic import BaseModel, PositiveInt
+from pydantic import BaseModel, PositiveInt, validator
 
 
 class Gender(Enum):
@@ -31,13 +31,28 @@ class Player(BaseModel):
     birth_date: date
     gender: Gender
     
+    @validator("birth_date")
+    def check_age(cls, v):
+        """verify that participants are at least 18 years old.
+            Args:
+                v (date): date of birth of participants.
+            Raises:
+                ValueError: the age of the participants is under 18.
+            Returns:
+                v: birth date of participant.
+        """
+        age = (date.today() - v) // timedelta(days=365.2425)
+        if age < 18:
+            raise ValueError('age must be > 18')
+        return v
+    
 
 player1 = Player(
     id=123, 
-    rank=-102, 
+    rank=102, 
     last_name="Amri", 
     first_name="Saber", 
-    birth_date= "1979-04-23", 
+    birth_date= "2015-04-23", 
     gender= "M")
 
 print(player1)
