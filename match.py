@@ -15,3 +15,7 @@ class Match(BaseModel):
     @property
     def score_player2(self):
         return 1.0 - self.score_player1
+    
+    @score_player2.setter
+    def score_player2(self, value):
+        self.score_player1 = 1.0 - value
