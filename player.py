@@ -1,5 +1,20 @@
 from datetime import date
+from enum import Enum
 from pydantic import BaseModel, PositiveInt
+
+
+class Gender(Enum):
+    """
+    Gender is a class that inherits from the Enum class.
+    
+    Args:
+        Enum (class): Enum is a basic python module integrated 
+        into the language. it will enumerate the values of the
+        gender variable.
+    """
+    Mal = "M"
+    Female = "F"
+
 
 class Player(BaseModel):
     """
@@ -14,7 +29,7 @@ class Player(BaseModel):
     last_name: str
     first_name: str
     birth_date: date
-    gender: str
+    gender: Gender
     
 
 player1 = Player(
