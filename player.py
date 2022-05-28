@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 from enum import Enum
-from pydantic import BaseModel, PositiveInt, validator
+from pydantic import BaseModel, PositiveInt, validator, constr
 
 
 class Gender(Enum):
@@ -26,8 +26,8 @@ class Player(BaseModel):
     """
     id: PositiveInt
     rank: PositiveInt
-    last_name: str
-    first_name: str
+    last_name: constr(strict=True, min_length=2, max_length=20)
+    first_name: constr(strict=True, min_length=2, max_length=20)
     birth_date: date
     gender: Gender
     
