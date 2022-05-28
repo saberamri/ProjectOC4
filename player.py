@@ -25,7 +25,7 @@ class Player(BaseModel):
         BaseModel (class): class BaseModel
     """
     id: PositiveInt
-    rank: int
+    rank: PositiveInt
     last_name: str
     first_name: str
     birth_date: date
