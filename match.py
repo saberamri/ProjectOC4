@@ -12,5 +12,6 @@ class Match(BaseModel):
     player2_id: PositiveInt
     score_player1: float = None
 
-match1 = Match(player1_id=12, player2_id=145)
-print(match1)
+    @property
+    def score_player2(self):
+        return 1.0 - self.score_player1
