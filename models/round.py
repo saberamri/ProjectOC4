@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List
 from pydantic import BaseModel, constr
 
-from match import Match
+from models.match import Match
 
 
 class Round(BaseModel):

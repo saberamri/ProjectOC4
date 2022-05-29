@@ -3,7 +3,7 @@ from enum import Enum
 from typing import List
 from pydantic import BaseModel, PositiveInt, constr
 
-from round import Round
+from models.round import Round
 
 class TimeControl(Enum):
     """
@@ -13,9 +13,9 @@ class TimeControl(Enum):
         Enum (class): Enum is a basic python module integrated into the language 
         it will enumerate the values of the timecontrol variable.
     """
-    Bullet = "Bul"
-    blitz = "bli"
-    fast = "fas"
+    Bullet = 1
+    blitz = 2
+    fast = 3
 
 
 class Tournament(BaseModel):
