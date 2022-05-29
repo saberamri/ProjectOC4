@@ -13,9 +13,9 @@ class TimeControl(Enum):
         Enum (class): Enum is a basic python module integrated into the language 
         it will enumerate the values of the timecontrol variable.
     """
-    Bullet = 1
-    blitz = 2
-    fast = 3
+    Bullet = "Bul"
+    blitz = "bli"
+    fast = "fas"
 
 
 class Tournament(BaseModel):
