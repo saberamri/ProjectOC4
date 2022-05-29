@@ -12,7 +12,7 @@ class Gender(Enum):
         into the language. it will enumerate the values of the
         gender variable.
     """
-    Mal = "M"
+    Mal = "H"
     Female = "F"
 
 
