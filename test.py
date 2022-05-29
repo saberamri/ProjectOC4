@@ -1,4 +1,5 @@
 from manager import Manager
+from menu import Menu
 
 from models.player import Player
 from models.tournament import Tournament
@@ -10,3 +11,7 @@ from models.tournament import Tournament
 # tournament_manager = Manager(item_type=Tournament)
 # print(tournament_manager.load_from_json(path="./Jason/tournaments.json"))
 
+menu = Menu(
+    title="Gérer les joueurs",
+    options=["Créer un joueur", "éditer le classement d'un joueur"])
+print(menu.show())
