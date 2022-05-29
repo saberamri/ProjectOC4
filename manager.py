@@ -21,7 +21,7 @@ class Manager:
         self.item_type = item_type
         self.items = {}
 
-    def load_from_jason(self, path: str):
+    def load_from_json(self, path: str):
         """
         load the jason data of a Player() or Tournament() from a path and
         store this data in the -items- dictionary of the Player() or
