@@ -33,4 +33,6 @@ class Manager:
         with open(path) as json_data:
             data_dict = json.load(json_data)
             for item_data in data_dict:
-                self.create(**item_data)
+                item = self.item_type(**item_data)
+                self.items[item.id] = item
+            return self.items
