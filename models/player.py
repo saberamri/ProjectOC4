@@ -45,14 +45,3 @@ class Player(BaseModel):
         if age < 18:
             raise ValueError('age must be > 18')
         return v
-    
-
-player1 = Player(
-    id=123, 
-    rank=102, 
-    last_name="Amri", 
-    first_name="Saber", 
-    birth_date= "2015-04-23", 
-    gender= "M")
-
-print(player1)
